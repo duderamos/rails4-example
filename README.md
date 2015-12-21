@@ -106,30 +106,13 @@ in production.
 1. Create a rails application
 
     ```
-    rhc app create railsapp ruby-2.0
-    ```
-
-   **Note:** This quickstart will not work with Ruby 1.8
-
-
-1. Add database support to your application
-
-    ```
-    rhc cartridge add -a railsapp -c mysql-5.5
+    rhc create-app myapp ruby-2.0 postgresql-9.2 --from-code https://github.com/duderamos/rails4-example/
     ```
 
     or
 
     ```
-    rhc cartridge add -a railsapp -c postgresql-9.2
-    ```
-
-1. Add this upstream Rails quickstart repository
-
-    ```
-    cd railsapp
-    git remote add upstream -m master git://github.com/openshift/rails4-example.git
-    git pull -s recursive -X theirs upstream master
+    rhc create-app myapp ruby-2.0 mysql-5.5 --from-code https://github.com/duderamos/rails4-example/
     ```
 
 1. Push your new code
